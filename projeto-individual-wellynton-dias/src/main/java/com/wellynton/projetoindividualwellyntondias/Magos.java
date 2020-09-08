@@ -6,7 +6,12 @@ public class Magos extends Monstros{
 
     public Magos(String nome, String tipo, Double ataque, Double defesa) {
         super(nome, tipo, ataque, defesa);
+
         efeitoMonstro();
+    }
+
+    public String getDetalhesMagos() {
+        return detalhesMagos;
     }
 
     @Override
@@ -29,6 +34,9 @@ public class Magos extends Monstros{
                 "Tipo: " + tipo + '\n' +
                 "Ataque: " + ataque + "\n" +
                 "Defesa: " + defesa + '\n' +
-                "Detalhe: " + String.format("%s, seu monstro ganhou %.2f de dano", this.detalhesMagos, efeitoMonstro());
+                "Efeito : " + efeitoMonstro() + " a mais de ataque" + '\n' +
+                "Detalhe: " + detalhesMagos + '\n' +
+                "Ataque atual: " + ataque + '\n' +
+                "Defesa Atual: " + defesa;
     }
 }

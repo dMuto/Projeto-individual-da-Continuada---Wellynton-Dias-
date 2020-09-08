@@ -6,7 +6,12 @@ public class Cavaleiro extends Monstros{
 
     public Cavaleiro(String nome, String tipo, Double ataque, Double defesa) {
         super(nome, tipo, ataque, defesa);
+
         efeitoMonstro();
+    }
+
+    public String getDetalheGuerreiro() {
+        return detalheGuerreiro;
     }
 
     @Override
@@ -26,6 +31,8 @@ public class Cavaleiro extends Monstros{
                 "Tipo: " + tipo + '\n' +
                 "Ataque: " + ataque + "\n" +
                 "Defesa: " + defesa + '\n' +
-                "Detalhe: " + String.format("%s, seu monstro ganhou %.2f de defesa", this.detalheGuerreiro, efeitoMonstro());
+                "Efeito: " + efeitoMonstro() + '\n' +
+                "Detalhe: " + detalheGuerreiro + '\n' +
+                "Defesa Atual: " + defesa;
     }
 }

@@ -6,6 +6,7 @@ public class Dragoes extends Monstros{
 
     public Dragoes(String nome, String tipo, Double ataque, Double defesa) {
         super(nome, tipo, ataque, defesa);
+
         efeitoMonstro();
     }
 
@@ -15,10 +16,11 @@ public class Dragoes extends Monstros{
 
     @Override
     public Double efeitoMonstro() {
-        Double efeito = this.getAtaque() + (this.getAtaque() * 0.15);
+
+        Double efeito = getAtaque() + (getAtaque() * 0.15);
         Double ganhoEfeito = (this.getAtaque() * 0.15);
 
-        this.setAtaque(efeito);
+        setAtaque(efeito);
 
         return ganhoEfeito;
     }
@@ -30,6 +32,8 @@ public class Dragoes extends Monstros{
                 "Tipo: " + tipo + '\n' +
                 "Ataque: " + ataque + "\n" +
                 "Defesa: " + defesa + '\n' +
-                "Detalhe: " + String.format("%s, seu monstro ganhou %.2f de dano", this.detalheDragoes, efeitoMonstro());
+                "Efeito: " + efeitoMonstro() + " a mais de dano" + '\n' +
+                "Detalhe: " + getDetalheDragoes() + '\n' +
+                "Ataque total: " + ataque;
     }
 }
